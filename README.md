@@ -6,7 +6,7 @@ Como funciona o jogo blackjack?
 
 No Blackjack, todos jogam contra o dealer. Os jogadores (nesse projeto, serão 2) recebem todas as cartas viradas para cima, e a primeira carta do dealer também fica virada para cima, enquanto a segunda fica virada para baixo. O objetivo do jogo é chegar o mais perto possível de 21 do que o dealer, sem ultrapassar esse valor. Se uma mão ultrapassar 21, é chamada de "estouro" ou "quebra", e a aposta é perdida. No Blackjack, Valetes, Damas, Reis e 10 valem 10. Um Ás pode valer 1 ou 11. Todas as outras cartas são jogadas com seu valor nominal.
 
-O primeiro objetivo será implementar o gerador de números aleatórios customizado para esse projeto.
+O primeiro objetivo será implementar o gerador de números aleatórios customiza--do para esse projeto.
 
 Um baralho padrão tem 52 cartas, divididas em 4 naipes (copas, ouros, paus e espadas) com 13 cartas cada (Ás, 2-10, Valete, Dama, Rei);
 
