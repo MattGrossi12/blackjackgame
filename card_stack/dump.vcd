@@ -1,0 +1,215 @@
+$date
+	Wed Jan 28 16:07:36 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench $end
+$var wire 8 ! data_out_9 [7:0] $end
+$var wire 8 " data_out_8 [7:0] $end
+$var wire 8 # data_out_7 [7:0] $end
+$var wire 8 $ data_out_6 [7:0] $end
+$var wire 8 % data_out_5 [7:0] $end
+$var wire 8 & data_out_4 [7:0] $end
+$var wire 8 ' data_out_3 [7:0] $end
+$var wire 8 ( data_out_2 [7:0] $end
+$var wire 8 ) data_out_10 [7:0] $end
+$var wire 8 * data_out_1 [7:0] $end
+$var wire 8 + data_out_0 [7:0] $end
+$var reg 1 , clk_i $end
+$var reg 8 - data_in [7:0] $end
+$var reg 1 . rst_i $end
+$var reg 1 / save $end
+$scope module uut $end
+$var wire 1 , clk_i $end
+$var wire 8 0 data_in [7:0] $end
+$var wire 1 . rst_i $end
+$var wire 1 / save $end
+$var reg 4 1 cycle_count [3:0] $end
+$var reg 8 2 data_out_0 [7:0] $end
+$var reg 8 3 data_out_1 [7:0] $end
+$var reg 8 4 data_out_10 [7:0] $end
+$var reg 8 5 data_out_2 [7:0] $end
+$var reg 8 6 data_out_3 [7:0] $end
+$var reg 8 7 data_out_4 [7:0] $end
+$var reg 8 8 data_out_5 [7:0] $end
+$var reg 8 9 data_out_6 [7:0] $end
+$var reg 8 : data_out_7 [7:0] $end
+$var reg 8 ; data_out_8 [7:0] $end
+$var reg 8 < data_out_9 [7:0] $end
+$var reg 8 = data_receiver [7:0] $end
+$var reg 8 > data_stack_0 [7:0] $end
+$var reg 8 ? data_stack_1 [7:0] $end
+$var reg 8 @ data_stack_10 [7:0] $end
+$var reg 8 A data_stack_2 [7:0] $end
+$var reg 8 B data_stack_3 [7:0] $end
+$var reg 8 C data_stack_4 [7:0] $end
+$var reg 8 D data_stack_5 [7:0] $end
+$var reg 8 E data_stack_6 [7:0] $end
+$var reg 8 F data_stack_7 [7:0] $end
+$var reg 8 G data_stack_8 [7:0] $end
+$var reg 8 H data_stack_9 [7:0] $end
+$upscope $end
+$scope begin Clock_generator $end
+$upscope $end
+$scope begin Wavedump $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 H
+b0 G
+b0 F
+b0 E
+b0 D
+b0 C
+b0 B
+b0 A
+b0 @
+b0 ?
+b0 >
+bx =
+b0 <
+b0 ;
+b0 :
+b0 9
+b0 8
+b0 7
+b0 6
+b0 5
+b0 4
+b0 3
+b0 2
+b0 1
+bx 0
+x/
+0.
+bx -
+0,
+b0 +
+b0 *
+b0 )
+b0 (
+b0 '
+b0 &
+b0 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#5000
+1,
+#10000
+0,
+#15000
+1,
+#20000
+0,
+0/
+1.
+#25000
+1,
+#30000
+0,
+#35000
+1,
+#40000
+0,
+#45000
+b1010 +
+b1010 2
+b1010 >
+b1010 =
+b1 1
+1,
+1/
+b1010 -
+b1010 0
+#50000
+0,
+#55000
+b1010 *
+b1010 3
+b1010 ?
+b10 1
+1,
+#60000
+0,
+#65000
+b1010 (
+b1010 5
+b1010 A
+b11 1
+1,
+#70000
+0,
+#75000
+b1010 '
+b1010 6
+b1010 B
+b100 1
+1,
+#80000
+0,
+#85000
+b1010 &
+b1010 7
+b1010 C
+b101 1
+1,
+#90000
+0,
+#95000
+b1010 %
+b1010 8
+b1010 D
+b110 1
+1,
+#100000
+0,
+#105000
+b1010 $
+b1010 9
+b1010 E
+b111 1
+1,
+#110000
+0,
+#115000
+b1010 #
+b1010 :
+b1010 F
+b1000 1
+1,
+#120000
+0,
+#125000
+b1010 "
+b1010 ;
+b1010 G
+b1001 1
+1,
+#130000
+0,
+#135000
+b1010 !
+b1010 <
+b1010 H
+b1010 1
+1,
+#140000
+0,
+#145000
+b1010 )
+b1010 4
+b1010 @
+b1011 1
+1,
