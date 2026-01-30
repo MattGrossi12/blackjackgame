@@ -25,7 +25,7 @@
 module testbench;
 
 	// Inputs
-	reg clk_in;
+	reg clk_i;
 	reg start;
 
 	// Outputs
@@ -39,8 +39,8 @@ module testbench;
 	wire clk_7_out;
 
 	// Instantiate the Unit Under Test (DUT)
-	baud_rate_generator dut (
-		.clk_in(clk_in), 
+	clocktree_generator dut (
+		.clk_i(clk_i), 
 		.start(start), 
 		.clk_0_out(clk_0_out), 
 		.clk_1_out(clk_1_out), 
@@ -54,10 +54,9 @@ module testbench;
 
     initial 
         begin: Clock_generator
-          clk_in = 0;
-          forever #5 clk_in = ~clk_in;
+          clk_i = 0;
+          forever #5 clk_i = ~clk_i;
         end
-
 
 	initial 
         begin

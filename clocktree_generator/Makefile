@@ -2,7 +2,7 @@
 SIM = sim.vvp
 LD_LIBRARY_PATH="" gtkwave dump.fst
 # Variáveis de Configuração
-TOP_MODULE   = baud_rate_generator
+TOP_MODULE   = clocktree_generator
 TESTBENCH = testbench
 
 # Lista de arquivos Verilog

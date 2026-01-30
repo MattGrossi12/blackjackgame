@@ -129,6 +129,7 @@ localparam B1_52 = 8'b00111101;  //K
 reg [7:0] next_card;
 reg [7:0] card_counter;
 
+//Control-Path:
 /*
 function [7:0] card_selector;
     input [7:0] counter;

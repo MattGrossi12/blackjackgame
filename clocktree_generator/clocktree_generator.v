@@ -19,8 +19,8 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module baud_rate_generator(
-    input clk_in,
+module clocktree_generator(
+    input clk_i,
     input start,            //Pino de ativação da cadeia de FFs
     output reg clk_0_out,   //Clock de 100Mhz       1/1
     output reg clk_1_out,   //Clock de 50Mhz        1/2
@@ -28,13 +28,13 @@ module baud_rate_generator(
     output reg clk_3_out,   //Clock de 12.5Mhz      1/8
     output reg clk_4_out,   //Clock de 6.25Mhz      1/16
     output reg clk_5_out,   //Clock de 3.125Mhz     1/32    (A principio clocks reserva)
-    output reg clk_6_out,    //Clock de 1.5625Mhz    1/64    (A principio clocks reserva)
+    output reg clk_6_out,    //Clock de 1.5625Mhz   1/64    (A principio clocks reserva)
     output reg clk_7_out    //Clock de 1.5625Mhz    1/128   (A principio clocks reserva)
 );
 
 reg [7:0] clk_sys;
 
-always@(posedge clk_in)
+always@(posedge clk_i)
     begin
         if(start)
             begin
