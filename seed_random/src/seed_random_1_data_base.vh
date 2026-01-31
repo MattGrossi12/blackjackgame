@@ -1,31 +1,3 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    20:47:20 01/28/2026 
-// Design Name: 
-// Module Name:    seed_random_1 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
-
-module seed_random_1(
-    input clk_i,
-    input rst_i,
-    input request_card_i,
-    output reg [7:0] card_to_send
-);
-
 /*
 ==============================================================
                     Regras de simbolização:                 
@@ -65,6 +37,7 @@ Exemplo amostral, Uma carta 4 de paus do Segundo baralho:
                 Em nosso caso: Baralho de n* 00 
 ==============================================================
 */
+
 //--------------------------------------------------------------
 //Naipe de 00 - Copas:
 localparam B1_01 = 8'b00000001;  //AS
@@ -126,93 +99,61 @@ localparam B1_50 = 8'b00111011;  //J
 localparam B1_51 = 8'b00111100;  //Q 
 localparam B1_52 = 8'b00111101;  //K
 //--------------------------------------------------------------
-reg [7:0] next_card;
-reg [7:0] card_counter;
+//          Positions
+//--------------------------------------------------------------
+localparam position_01 = B1_51;
+localparam position_02 = B1_16;
+localparam position_03 = B1_35;
+localparam position_04 = B1_08;
+localparam position_05 = B1_34;
+localparam position_06 = B1_36;
+localparam position_07 = B1_12;
+localparam position_08 = B1_44;
+localparam position_09 = B1_31;
+localparam position_10 = B1_03;
+localparam position_11 = B1_32;
+localparam position_12 = B1_01;
+localparam position_13 = B1_49;
+localparam position_14 = B1_07;
+localparam position_15 = B1_20;
+localparam position_16 = B1_42;
+localparam position_17 = B1_47;
+localparam position_18 = B1_26;
+localparam position_19 = B1_39;
+localparam position_20 = B1_46;
+localparam position_21 = B1_02;
+localparam position_22 = B1_13;
+localparam position_23 = B1_24;
+localparam position_24 = B1_40;
+localparam position_25 = B1_11;
+localparam position_26 = B1_33;
+localparam position_27 = B1_38;
+localparam position_28 = B1_23;
+localparam position_29 = B1_10;
+localparam position_30 = B1_45;
+localparam position_31 = B1_04;
+localparam position_32 = B1_29;
+localparam position_33 = B1_27;
+localparam position_34 = B1_18;
+localparam position_35 = B1_37;
+localparam position_36 = B1_28;
+localparam position_37 = B1_09;
+localparam position_38 = B1_21;
+localparam position_39 = B1_52;
+localparam position_40 = B1_30;
+localparam position_41 = B1_05;
+localparam position_42 = B1_22;
+localparam position_43 = B1_43;
+localparam position_44 = B1_48;
+localparam position_45 = B1_14;
+localparam position_46 = B1_50;
+localparam position_47 = B1_41;
+localparam position_48 = B1_25;
+localparam position_49 = B1_17;
+localparam position_50 = B1_19;
+localparam position_51 = B1_15;
+localparam position_52 = B1_06;
 
-//Control-Path:
-/*
-function [7:0] card_selector;
-    input [7:0] counter;
-        begin
-            case (counter)
-                1:  card_selector = B1_51;
-                2:  card_selector = B1_16;
-                3:  card_selector = B1_35;
-                4:  card_selector = B1_08;
-                5:  card_selector = B1_34;
-                6:  card_selector = B1_36;
-                7:  card_selector = B1_12;
-                8:  card_selector = B1_44;
-                9:  card_selector = B1_31;
-                10: card_selector = B1_03;
-                11: card_selector = B1_32;
-                12: card_selector = B1_01;
-                13: card_selector = B1_49;
-                14: card_selector = B1_07;
-                15: card_selector = B1_20;
-                16: card_selector = B1_42;
-                17: card_selector = B1_47;
-                18: card_selector = B1_26;
-                19: card_selector = B1_39;
-                20: card_selector = B1_46;
-                21: card_selector = B1_02;
-                22: card_selector = B1_13;
-                23: card_selector = B1_24;
-                24: card_selector = B1_40;
-                25: card_selector = B1_11;
-                26: card_selector = B1_33;
-                27: card_selector = B1_38;
-                28: card_selector = B1_23;
-                29: card_selector = B1_10;
-                30: card_selector = B1_45;
-                31: card_selector = B1_04;
-                32: card_selector = B1_29;
-                33: card_selector = B1_27;
-                34: card_selector = B1_18;
-                35: card_selector = B1_37;
-                36: card_selector = B1_28;
-                37: card_selector = B1_09;
-                38: card_selector = B1_21;
-                39: card_selector = B1_52;
-                40: card_selector = B1_30;
-                41: card_selector = B1_05;
-                42: card_selector = B1_22;
-                43: card_selector = B1_43;
-                44: card_selector = B1_48;
-                45: card_selector = B1_14;
-                46: card_selector = B1_50;
-                47: card_selector = B1_41;
-                48: card_selector = B1_25;
-                49: card_selector = B1_17;
-                50: card_selector = B1_19;
-                51: card_selector = B1_15;
-                52: card_selector = B1_06;
-                default: card_selector = 8'b00000000;
-            endcase
-        end
-endfunction
-*/
-
-always@(posedge clk_i or negedge rst_i)
-    begin
-        if(!rst_i)
-            begin
-                card_counter <= 0;
-                next_card    <= 0;
-                card_to_send <= 0;
-            end
-        else 
-        if(request_card_i)
-            begin 
-                card_counter    <= card_counter + 1'b1;
-                card_to_send    <= next_card;
-            end
-        else
-            begin
-                next_card <= next_card;
-            end
-    end
-
-assign next_card = card_selector(card_counter + 1'b1);
-
-endmodule
+//States:
+localparam IDLE = 0;
+localparam SEND = 1;

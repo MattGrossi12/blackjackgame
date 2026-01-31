@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -20,27 +19,27 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module seed_random_1_control_path(
-    input clk_i,
-    input rst_i,
-    input request_card_i,
+    input clk_cp_i,
+    input rst_cp_i,
+    input req_card_state_cp,
 
-    output state_o;
+    output state_o
 );
+
 //States:
 localparam IDLE = 0;
 localparam SEND = 1;
 
 reg next_state;
 
-
-always@(posedge clk_i or negedge rst_i)
+always@(posedge clk_cp_i or negedge rst_cp_i)
     begin
-        if(!rst_i)
+        if(!rst_cp_i)
             begin
                 next_state <= IDLE;
             end
         else 
-        if(request_card_i)
+        if(req_card_state_cp)
             begin 
                 next_state <= SEND;
             end

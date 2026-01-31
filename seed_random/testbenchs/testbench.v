@@ -30,14 +30,14 @@ module testbench;
 	reg request_card_i;
 
 	// Outputs
-	wire [7:0] card_to_send;
+	wire [7:0] card_to_send_o;
 
 	// Instantiate the Unit Under Test (UUT)
-	seed_random_1 uut (
+	seed_random_1_top uut (
 		.clk_i(clk_i), 
 		.rst_i(rst_i), 
 		.request_card_i(request_card_i), 
-		.card_to_send(card_to_send)
+		.card_to_send_o(card_to_send_o)
 	);
 
     initial 

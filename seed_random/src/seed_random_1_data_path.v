@@ -1,11 +1,10 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
 // 
-// Create Date:    20:47:20 01/28/2026 
+// Create Date:    21:11:06 01/30/2026 
 // Design Name: 
-// Module Name:    seed_random_1 
+// Module Name:    seed_random_1_data_path 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -19,15 +18,14 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-`include "seed_random_1_data_base_cards.vh"
-`include "seed_random_1_data_base_positions.vh"
-
-module seed_random_1(
-    input clk_i,
-    input rst_i,
-    input request_card_i,
-    output reg [7:0] card_to_send
+module seed_random_1_data_path(
+    input clk_dp_i,
+    input rst_dp_i,
+    input req_card_state_dp,
+    output reg [7:0] card_to_send_dp
 );
+
+`include "seed_random_1_data_base.vh"
 
 reg [7:0] next_card;
 reg [7:0] card_counter;
@@ -37,7 +35,8 @@ reg state;
 function [7:0] card_selector;
     input [7:0] counter;
         begin
-            case (counter)1:  card_selector = position_01;
+            case (counter)
+                1:  card_selector = position_01;
                 2:  card_selector = position_02;
                 3:  card_selector = position_03;
                 4:  card_selector = position_04;
@@ -96,7 +95,32 @@ endfunction
 
 always@(*)
     begin
+        state = req_card_state_dp;
+    end
 
+always@(posedge clk_dp_i or negedge rst_dp_i)
+    begin
+        if(!rst_dp_i)
+            begin
+                card_counter <= 0;
+                next_card    <= 0;
+                card_to_send_dp <= 0;
+            end
+        else 
+        if(state == IDLE)
+            begin 
+                card_counter <= card_counter;
+            end
+        else if(state == SEND)
+                begin
+                    card_counter    <= card_counter + 1'b1;
+                    next_card       <= card_selector(card_counter);
+                end
+        else
+            begin
+                card_counter    <= card_counter;
+                next_card       <= next_card;
+            end
     end
 
 endmodule
