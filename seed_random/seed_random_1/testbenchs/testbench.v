@@ -49,9 +49,9 @@ module testbench;
 	initial 
         begin
             // Initialize Inputs
-			rst_i = 1;
-			#10;
 			rst_i = 0;
+			#10;
+			rst_i = 1;
 			#10;
             request_card_i = 0;
             #50;
@@ -80,7 +80,7 @@ module testbench;
       
     initial 
         begin: Wavedump
-            $dumpfile("dump.vcd");
+                $dumpfile("../waveforms/top.vcd");
             $dumpvars(0);
         end
 

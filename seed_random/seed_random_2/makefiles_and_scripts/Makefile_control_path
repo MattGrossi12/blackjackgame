@@ -2,20 +2,16 @@
 SIM = sim.vvp
 LD_LIBRARY_PATH="" gtkwave dump.fst
 # Variáveis de Configuração
-TOP_MODULE   = seed_random_1_top.v
-TESTBENCH = testbench.v
+SRC = ../src
+TB = ../testbenchs
 
-INST1 = seed_random_1_control_path.v
-INST2 = seed_random_1_data_path.v
-INST3 = seed_random_1_data_base.vh
+TOP_MODULE   = seed_random_2_control_path.v
+TESTBENCH = testbench_control_path.v 
 
 # Lista de arquivos Verilog
 VERILOG_FILES = \
-    $(TOP_MODULE) \
-	$(INST1) \
-	$(INST2) \
-	$(INST3) \
-    $(TESTBENCH)
+    $(SRC)/$(TOP_MODULE) \
+    $(SRC)/$(TESTBENCH)
 
 # Comando de compilação pelo cvc:
 cvc:

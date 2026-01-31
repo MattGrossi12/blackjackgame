@@ -26,11 +26,11 @@ module seed_random_2_data_path(
     output [7:0] card_to_send_dp_o
 );
 
-`include "seed_random_1_data_base.vh"
+`include "seed_random_2_data_base.vh"
 
     wire [7:0] card_to_send;
 
-    seed_random_1_data_path_counter inst(
+    seed_random_2_data_path_counter inst(
                                     .clk_dp_c_i(clk_dp_i),
                                     .rst_dp_c_i(rst_dp_i),
                                     .req_card_state_dp_c_i(req_card_state_dp_i),

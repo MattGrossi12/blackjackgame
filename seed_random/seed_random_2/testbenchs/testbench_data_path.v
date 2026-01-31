@@ -5,14 +5,14 @@
     // Engineer:
     //
     // Create Date:   09:33:55 01/31/2026
-    // Design Name:   seed_random_1_data_path
+    // Design Name:   seed_random_2_data_path
     // Module Name:   /home/matheus/ISE_projects/seed_random_1/tb.v
     // Project Name:  seed_random_1
     // Target Device:  
     // Tool versions:  
     // Description: 
     //
-    // Verilog Test Fixture created by ISE for module: seed_random_1_data_path
+    // Verilog Test Fixture created by ISE for module: seed_random_2_data_path
     //
     // Dependencies:
     // 
@@ -33,7 +33,7 @@
         wire [7:0] card_to_send_dp_o;
 
         // Instantiate the Unit Under Test (UUT)
-        seed_random_1_data_path uut (
+        seed_random_2_data_path uut (
             .clk_dp_i(clk_dp_i), 
             .rst_dp_i(rst_dp_i), 
             .req_card_state_dp_i(req_card_state_dp_i), 

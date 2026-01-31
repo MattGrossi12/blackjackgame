@@ -33,7 +33,7 @@ module testbench;
 	wire [7:0] card_to_send_o;
 
 	// Instantiate the Unit Under Test (UUT)
-	seed_random_1_top uut (
+	seed_random_2_top uut (
 		.clk_i(clk_i), 
 		.rst_i(rst_i), 
 		.request_card_i(request_card_i), 
@@ -49,9 +49,9 @@ module testbench;
 	initial 
         begin
             // Initialize Inputs
-			rst_i = 1;
-			#10;
 			rst_i = 0;
+			#10;
+			rst_i = 1;
 			#10;
             request_card_i = 0;
             #50;
@@ -80,7 +80,7 @@ module testbench;
       
     initial 
         begin: Wavedump
-            $dumpfile("dump.vcd");
+                $dumpfile("../waveforms/top.vcd");
             $dumpvars(0);
         end
 

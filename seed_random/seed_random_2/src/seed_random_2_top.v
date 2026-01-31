@@ -37,10 +37,10 @@ module seed_random_2_top(
 
     seed_random_2_data_path inst2
                                     (
-                                        .clk_dp_i           (clk_i),
-                                        .rst_dp_i           (rst_i),
-                                        .req_card_state_dp  (state_w),
-                                        .card_to_send_dp    (card_to_send_o)
+                                        .clk_dp_i               (clk_i),
+                                        .rst_dp_i               (rst_i),
+                                        .req_card_state_dp_i    (state_w),
+                                        .card_to_send_dp_o      (card_to_send_o)
                                     );
 
 endmodule

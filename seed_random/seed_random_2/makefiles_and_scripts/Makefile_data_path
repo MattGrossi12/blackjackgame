@@ -4,9 +4,10 @@ LD_LIBRARY_PATH="" gtkwave dump.fst
 # Variáveis de Configuração
 SRC = ../src
 TB = ../testbenchs
-TOP_MODULE   = seed_random_1_data_path.v
-INST1 = seed_random_1_data_base.vh
-INST2 = seed_random_1_data_path_counter.v
+
+TOP_MODULE   = seed_random_2_data_path.v
+INST1 = seed_random_2_data_base.vh
+INST2 = seed_random_2_data_path_counter.v
 TESTBENCH = testbench_data_path.v
 INC = -I $(SRC)
 

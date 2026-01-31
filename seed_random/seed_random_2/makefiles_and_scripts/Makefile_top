@@ -2,20 +2,26 @@
 SIM = sim.vvp
 LD_LIBRARY_PATH="" gtkwave dump.fst
 # Variáveis de Configuração
-TOP_MODULE   = seed_random_1_top.v
+SRC = ../src
+TB = ../testbenchs
+INC = -I $(SRC)
+
+TOP_MODULE   = seed_random_2_top.v
 TESTBENCH = testbench.v
 
-INST1 = seed_random_1_control_path.v
-INST2 = seed_random_1_data_path.v
-INST3 = seed_random_1_data_base.vh
+INST1 = seed_random_2_control_path.v
+INST2 = seed_random_2_data_path.v
+INST3 = seed_random_2_data_base.vh
+INST4 = seed_random_2_data_path_counter.v
 
 # Lista de arquivos Verilog
 VERILOG_FILES = \
-    $(TOP_MODULE) \
-	$(INST1) \
-	$(INST2) \
-	$(INST3) \
-    $(TESTBENCH)
+    $(SRC)/$(TOP_MODULE) \
+	$(SRC)/$(INST1) \
+	$(SRC)/$(INST2) \
+	$(SRC)/$(INST3) \
+	$(SRC)/$(INST4) \
+    $(TB)/$(TESTBENCH)
 
 # Comando de compilação pelo cvc:
 cvc:
@@ -33,7 +39,7 @@ fst:
 
 # Comando de compilação pelo icarus:
 icarus:
-	iverilog -Wall -g2012 -o $(SIM) $(VERILOG_FILES)
+	iverilog -Wall -g2012 $(INC) -o $(SIM) $(VERILOG_FILES)
 	vvp $(SIM)
 	rm -f sim.vvp
 

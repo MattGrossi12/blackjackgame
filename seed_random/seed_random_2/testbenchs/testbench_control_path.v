@@ -5,14 +5,14 @@
 // Engineer:
 //
 // Create Date:   20:58:55 01/30/2026
-// Design Name:   seed_random_1_control_path
+// Design Name:   seed_random_2_control_path
 // Module Name:   /home/matheus/ISE_projects/seed_random_1/testbench_control_path.v
 // Project Name:  seed_random_1
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: seed_random_1_control_path
+// Verilog Test Fixture created by ISE for module: seed_random_2_control_path
 //
 // Dependencies:
 // 
@@ -33,7 +33,7 @@ module testbench_control_path;
 	wire state_o;
 
 	// Instantiate the Unit Under Test (UUT)
-	seed_random_1_control_path uut (
+	seed_random_2_control_path uut (
 		.clk_cp_i(clk_cp_i), 
 		.rst_cp_i(rst_cp_i), 
 		.req_card_state_cp(req_card_state_cp), 

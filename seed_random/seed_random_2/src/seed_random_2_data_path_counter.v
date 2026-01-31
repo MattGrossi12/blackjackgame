@@ -25,7 +25,7 @@ module seed_random_2_data_path_counter(
     output reg [7:0] next_card_o
 );
 
-`include "seed_random_1_data_base.vh"
+`include "seed_random_2_data_base.vh"
 
 
 reg [7:0] card_counter;
