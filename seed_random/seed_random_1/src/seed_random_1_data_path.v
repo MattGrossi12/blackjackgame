@@ -21,21 +21,28 @@
 module seed_random_1_data_path(
     input clk_dp_i,
     input rst_dp_i,
-    input req_card_state_dp,
-    output reg [7:0] card_to_send_dp
+    input req_card_state_dp_i,
+
+    output [7:0] card_to_send_dp_o
 );
 
 `include "seed_random_1_data_base.vh"
 
+    wire [7:0] card_to_send;
+
+    seed_random_1_data_path_counter inst(
+                                    .clk_dp_c_i(clk_dp_i),
+                                    .rst_dp_c_i(rst_dp_i),
+                                    .req_card_state_dp_c_i(req_card_state_dp_i),
+                                    .next_card_o(card_to_send)
+                                );
+
 reg [7:0] next_card;
-reg [7:0] card_counter;
-reg state;
 
 //Data-Path:
-function [7:0] card_selector;
-    input [7:0] counter;
+function [7:0] card_selector (input [7:0] card);
         begin
-            case (counter)
+            case (card)
                 1:  card_selector = position_01;
                 2:  card_selector = position_02;
                 3:  card_selector = position_03;
@@ -88,39 +95,23 @@ function [7:0] card_selector;
                 50: card_selector = position_50;
                 51: card_selector = position_51;
                 52: card_selector = position_52;
-                default: card_selector = card_selector;
+                default: card_selector = 8'b00000000;
             endcase
         end
 endfunction
-
-always@(*)
-    begin
-        state = req_card_state_dp;
-    end
 
 always@(posedge clk_dp_i or negedge rst_dp_i)
     begin
         if(!rst_dp_i)
             begin
-                card_counter <= 0;
-                next_card    <= 0;
-                card_to_send_dp <= 0;
+                    next_card <= 0;
             end
         else 
-        if(state == IDLE)
-            begin 
-                card_counter <= card_counter;
-            end
-        else if(state == SEND)
-                begin
-                    card_counter    <= card_counter + 1'b1;
-                    next_card       <= card_selector(card_counter);
-                end
-        else
             begin
-                card_counter    <= card_counter;
-                next_card       <= next_card;
+                next_card <= card_selector(card_to_send);
             end
     end
+
+assign card_to_send_dp_o = next_card;
 
 endmodule

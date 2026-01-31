@@ -18,41 +18,48 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module seed_random_1_data_path_counter(
-    input clk_dp_i,
-    input rst_dp_i,
-    input req_card_state_dp,
-    output reg [7:0] card_to_send_dp
+module seed_random_2_data_path_counter(
+    input clk_dp_c_i,
+    input rst_dp_c_i,
+    input req_card_state_dp_c_i,
+    output reg [7:0] next_card_o
 );
 
 `include "seed_random_1_data_base.vh"
 
-reg [7:0] next_card;
+
 reg [7:0] card_counter;
 reg state;
 
 always@(*)
     begin
-        state = req_card_state_dp;
+        state = req_card_state_dp_c_i;
+        next_card_o = card_counter;
     end
 
-//Counter
-always@(posedge clk_dp_i or negedge rst_dp_i)
+//Counter:
+always@(posedge clk_dp_c_i or negedge rst_dp_c_i)
     begin
-        if(!rst_dp_i)
+        if(!rst_dp_c_i)
             begin
                 card_counter    <= 0;
-                next_card       <= 0;
-                card_to_send_dp <= 0;
+                next_card_o <= 0;
             end
         else 
-        if(state == IDLE)
+        if(state == 1)
             begin 
-                card_counter <= card_counter;
+                    if(card_counter == 52) 
+                        begin
+                            card_counter <= 1'b0;
+                        end
+                    else
+                        begin
+                            card_counter <= card_counter + 1'b1;
+                        end
             end
         else
             begin
-                card_counter    <= card_counter + 1'b1;
+                card_counter <= card_counter;
             end
     end
 
