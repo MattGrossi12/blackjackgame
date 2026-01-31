@@ -1,0 +1,358 @@
+$date
+	Sat Jan 31 20:31:45 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench_data_path_counter $end
+$var wire 8 ! next_card_o [7:0] $end
+$var reg 1 " clk_dp_c_i $end
+$var reg 1 # req_card_state_dp_c_i $end
+$var reg 1 $ rst_dp_c_i $end
+$scope module uut $end
+$var wire 1 " clk_dp_c_i $end
+$var wire 1 # req_card_state_dp_c_i $end
+$var wire 1 $ rst_dp_c_i $end
+$var parameter 8 % B4_01 $end
+$var parameter 8 & B4_02 $end
+$var parameter 8 ' B4_03 $end
+$var parameter 8 ( B4_04 $end
+$var parameter 8 ) B4_05 $end
+$var parameter 8 * B4_06 $end
+$var parameter 8 + B4_07 $end
+$var parameter 8 , B4_08 $end
+$var parameter 8 - B4_09 $end
+$var parameter 8 . B4_10 $end
+$var parameter 8 / B4_11 $end
+$var parameter 8 0 B4_12 $end
+$var parameter 8 1 B4_13 $end
+$var parameter 8 2 B4_14 $end
+$var parameter 8 3 B4_15 $end
+$var parameter 8 4 B4_16 $end
+$var parameter 8 5 B4_17 $end
+$var parameter 8 6 B4_18 $end
+$var parameter 8 7 B4_19 $end
+$var parameter 8 8 B4_20 $end
+$var parameter 8 9 B4_21 $end
+$var parameter 8 : B4_22 $end
+$var parameter 8 ; B4_23 $end
+$var parameter 8 < B4_24 $end
+$var parameter 8 = B4_25 $end
+$var parameter 8 > B4_26 $end
+$var parameter 8 ? B4_27 $end
+$var parameter 8 @ B4_28 $end
+$var parameter 8 A B4_29 $end
+$var parameter 8 B B4_30 $end
+$var parameter 8 C B4_31 $end
+$var parameter 8 D B4_32 $end
+$var parameter 8 E B4_33 $end
+$var parameter 8 F B4_34 $end
+$var parameter 8 G B4_35 $end
+$var parameter 8 H B4_36 $end
+$var parameter 8 I B4_37 $end
+$var parameter 8 J B4_38 $end
+$var parameter 8 K B4_39 $end
+$var parameter 8 L B4_40 $end
+$var parameter 8 M B4_41 $end
+$var parameter 8 N B4_42 $end
+$var parameter 8 O B4_43 $end
+$var parameter 8 P B4_44 $end
+$var parameter 8 Q B4_45 $end
+$var parameter 8 R B4_46 $end
+$var parameter 8 S B4_47 $end
+$var parameter 8 T B4_48 $end
+$var parameter 8 U B4_49 $end
+$var parameter 8 V B4_50 $end
+$var parameter 8 W B4_51 $end
+$var parameter 8 X B4_52 $end
+$var parameter 32 Y IDLE $end
+$var parameter 32 Z SEND $end
+$var parameter 8 [ position_01 $end
+$var parameter 8 \ position_02 $end
+$var parameter 8 ] position_03 $end
+$var parameter 8 ^ position_04 $end
+$var parameter 8 _ position_05 $end
+$var parameter 8 ` position_06 $end
+$var parameter 8 a position_07 $end
+$var parameter 8 b position_08 $end
+$var parameter 8 c position_09 $end
+$var parameter 8 d position_10 $end
+$var parameter 8 e position_11 $end
+$var parameter 8 f position_12 $end
+$var parameter 8 g position_13 $end
+$var parameter 8 h position_14 $end
+$var parameter 8 i position_15 $end
+$var parameter 8 j position_16 $end
+$var parameter 8 k position_17 $end
+$var parameter 8 l position_18 $end
+$var parameter 8 m position_19 $end
+$var parameter 8 n position_20 $end
+$var parameter 8 o position_21 $end
+$var parameter 8 p position_22 $end
+$var parameter 8 q position_23 $end
+$var parameter 8 r position_24 $end
+$var parameter 8 s position_25 $end
+$var parameter 8 t position_26 $end
+$var parameter 8 u position_27 $end
+$var parameter 8 v position_28 $end
+$var parameter 8 w position_29 $end
+$var parameter 8 x position_30 $end
+$var parameter 8 y position_31 $end
+$var parameter 8 z position_32 $end
+$var parameter 8 { position_33 $end
+$var parameter 8 | position_34 $end
+$var parameter 8 } position_35 $end
+$var parameter 8 ~ position_36 $end
+$var parameter 8 !" position_37 $end
+$var parameter 8 "" position_38 $end
+$var parameter 8 #" position_39 $end
+$var parameter 8 $" position_40 $end
+$var parameter 8 %" position_41 $end
+$var parameter 8 &" position_42 $end
+$var parameter 8 '" position_43 $end
+$var parameter 8 (" position_44 $end
+$var parameter 8 )" position_45 $end
+$var parameter 8 *" position_46 $end
+$var parameter 8 +" position_47 $end
+$var parameter 8 ," position_48 $end
+$var parameter 8 -" position_49 $end
+$var parameter 8 ." position_50 $end
+$var parameter 8 /" position_51 $end
+$var parameter 8 0" position_52 $end
+$var reg 8 1" card_counter [7:0] $end
+$var reg 8 2" next_card_o [7:0] $end
+$var reg 1 3" state $end
+$upscope $end
+$scope begin Clock_generator $end
+$upscope $end
+$scope begin Wavedump $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100 0"
+b100100 /"
+b101010 ."
+b111100 -"
+b111101 ,"
+b10111 +"
+b110101 *"
+b1011 )"
+b100101 ("
+b101100 '"
+b111 &"
+b101 %"
+b110010 $"
+b10100 #"
+b11000 ""
+b11010 !"
+b10110 ~
+b1001 }
+b1100 |
+b111011 {
+b11011 z
+b10011 y
+b11101 x
+b11001 w
+b11 v
+b10010 u
+b101000 t
+b1010 s
+b100010 r
+b110111 q
+b111000 p
+b11100 o
+b101011 n
+b100110 m
+b10001 l
+b110011 k
+b1 j
+b110110 i
+b10 h
+b101101 g
+b110100 f
+b100011 e
+b1000 d
+b111001 c
+b100001 b
+b10101 a
+b1101 `
+b111010 _
+b110 ^
+b100111 ]
+b110001 \
+b101001 [
+b1 Z
+b0 Y
+b111101 X
+b111100 W
+b111011 V
+b111010 U
+b111001 T
+b111000 S
+b110111 R
+b110110 Q
+b110101 P
+b110100 O
+b110011 N
+b110010 M
+b110001 L
+b101101 K
+b101100 J
+b101011 I
+b101010 H
+b101001 G
+b101000 F
+b100111 E
+b100110 D
+b100101 C
+b100100 B
+b100011 A
+b100010 @
+b100001 ?
+b11101 >
+b11100 =
+b11011 <
+b11010 ;
+b11001 :
+b11000 9
+b10111 8
+b10110 7
+b10101 6
+b10100 5
+b10011 4
+b10010 3
+b10001 2
+b1101 1
+b1100 0
+b1011 /
+b1010 .
+b1001 -
+b1000 ,
+b111 +
+b110 *
+b101 )
+b100 (
+b11 '
+b10 &
+b1 %
+$end
+#0
+$dumpvars
+03"
+b0 2"
+b0 1"
+0$
+0#
+0"
+b0 !
+$end
+#5000
+1"
+#10000
+0"
+1$
+#15000
+1"
+#20000
+13"
+0"
+1#
+#25000
+b1 !
+b1 2"
+b1 1"
+1"
+#30000
+0"
+#35000
+b10 !
+b10 2"
+b10 1"
+1"
+#40000
+0"
+#45000
+b11 !
+b11 2"
+b11 1"
+1"
+#50000
+0"
+#55000
+b100 !
+b100 2"
+b100 1"
+1"
+#60000
+0"
+#65000
+b101 !
+b101 2"
+b101 1"
+1"
+#70000
+03"
+0"
+0#
+#75000
+1"
+#80000
+0"
+#85000
+1"
+#90000
+0"
+#95000
+1"
+#100000
+0"
+#105000
+1"
+#110000
+0"
+#115000
+1"
+#120000
+13"
+0"
+1#
+#125000
+b110 !
+b110 2"
+b110 1"
+1"
+#130000
+0"
+#135000
+b111 !
+b111 2"
+b111 1"
+1"
+#140000
+0"
+#145000
+b1000 !
+b1000 2"
+b1000 1"
+1"
+#150000
+0"
+#155000
+b1001 !
+b1001 2"
+b1001 1"
+1"
+#160000
+0"
+#165000
+b1010 !
+b1010 2"
+b1010 1"
+1"
+#170000
+0"

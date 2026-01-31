@@ -5,12 +5,22 @@ LD_LIBRARY_PATH="" gtkwave dump.fst
 SRC = ../src
 TB = ../testbenchs
 INC = -I $(SRC)
-TOP_MODULE   = seed_random_2_control_path.v
-TESTBENCH = testbench_control_path.v 
+
+TOP_MODULE   = seed_random_4_top.v
+TESTBENCH = testbench.v
+
+INST1 = seed_random_4_control_path.v
+INST2 = seed_random_4_data_path.v
+INST3 = seed_random_4_data_base.vh
+INST4 = seed_random_4_data_path_counter.v
 
 # Lista de arquivos Verilog
 VERILOG_FILES = \
     $(SRC)/$(TOP_MODULE) \
+	$(SRC)/$(INST1) \
+	$(SRC)/$(INST2) \
+	$(SRC)/$(INST3) \
+	$(SRC)/$(INST4) \
     $(TB)/$(TESTBENCH)
 
 # Comando de compilação pelo cvc:

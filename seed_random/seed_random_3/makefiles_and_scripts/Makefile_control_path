@@ -5,7 +5,7 @@ LD_LIBRARY_PATH="" gtkwave dump.fst
 SRC = ../src
 TB = ../testbenchs
 INC = -I $(SRC)
-TOP_MODULE   = seed_random_2_control_path.v
+TOP_MODULE   = seed_random_3_control_path.v
 TESTBENCH = testbench_control_path.v 
 
 # Lista de arquivos Verilog

@@ -18,7 +18,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module seed_random_1_top(
+module seed_random_3_top(
     input clk_i,
     input rst_i,
     input request_card_i,
@@ -27,7 +27,7 @@ module seed_random_1_top(
 
     wire state_w;
 
-    seed_random_1_control_path inst1
+    seed_random_3_control_path inst1
                                     (
                                         .clk_cp_i           (clk_i),
                                         .rst_cp_i           (rst_i),
@@ -35,7 +35,7 @@ module seed_random_1_top(
                                         .state_o            (state_w)
                                     );
 
-    seed_random_1_data_path inst2
+    seed_random_3_data_path inst2
                                     (
                                         .clk_dp_i               (clk_i),
                                         .rst_dp_i               (rst_i),
