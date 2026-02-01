@@ -28,7 +28,7 @@ module clocktree_generator(
     output reg clk_3_out,   //Clock de 12.5Mhz      1/8
     output reg clk_4_out,   //Clock de 6.25Mhz      1/16
     output reg clk_5_out,   //Clock de 3.125Mhz     1/32    (A principio clocks reserva)
-    output reg clk_6_out,    //Clock de 1.5625Mhz   1/64    (A principio clocks reserva)
+    output reg clk_6_out,   //Clock de 1.5625Mhz    1/64    (A principio clocks reserva)
     output reg clk_7_out    //Clock de 1.5625Mhz    1/128   (A principio clocks reserva)
 );
 
