@@ -1,0 +1,849 @@
+$date
+	Sat Jan 31 09:54:15 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench_data_path $end
+$var wire 8 ! card_to_send_dp_o [7:0] $end
+$var reg 1 " clk_dp_i $end
+$var reg 1 # req_card_state_dp_i $end
+$var reg 1 $ rst_dp_i $end
+$scope module uut $end
+$var wire 8 % card_to_send_dp_o [7:0] $end
+$var wire 1 " clk_dp_i $end
+$var wire 1 # req_card_state_dp_i $end
+$var wire 1 $ rst_dp_i $end
+$var wire 8 & card_to_send [7:0] $end
+$var parameter 8 ' B1_01 $end
+$var parameter 8 ( B1_02 $end
+$var parameter 8 ) B1_03 $end
+$var parameter 8 * B1_04 $end
+$var parameter 8 + B1_05 $end
+$var parameter 8 , B1_06 $end
+$var parameter 8 - B1_07 $end
+$var parameter 8 . B1_08 $end
+$var parameter 8 / B1_09 $end
+$var parameter 8 0 B1_10 $end
+$var parameter 8 1 B1_11 $end
+$var parameter 8 2 B1_12 $end
+$var parameter 8 3 B1_13 $end
+$var parameter 8 4 B1_14 $end
+$var parameter 8 5 B1_15 $end
+$var parameter 8 6 B1_16 $end
+$var parameter 8 7 B1_17 $end
+$var parameter 8 8 B1_18 $end
+$var parameter 8 9 B1_19 $end
+$var parameter 8 : B1_20 $end
+$var parameter 8 ; B1_21 $end
+$var parameter 8 < B1_22 $end
+$var parameter 8 = B1_23 $end
+$var parameter 8 > B1_24 $end
+$var parameter 8 ? B1_25 $end
+$var parameter 8 @ B1_26 $end
+$var parameter 8 A B1_27 $end
+$var parameter 8 B B1_28 $end
+$var parameter 8 C B1_29 $end
+$var parameter 8 D B1_30 $end
+$var parameter 8 E B1_31 $end
+$var parameter 8 F B1_32 $end
+$var parameter 8 G B1_33 $end
+$var parameter 8 H B1_34 $end
+$var parameter 8 I B1_35 $end
+$var parameter 8 J B1_36 $end
+$var parameter 8 K B1_37 $end
+$var parameter 8 L B1_38 $end
+$var parameter 8 M B1_39 $end
+$var parameter 8 N B1_40 $end
+$var parameter 8 O B1_41 $end
+$var parameter 8 P B1_42 $end
+$var parameter 8 Q B1_43 $end
+$var parameter 8 R B1_44 $end
+$var parameter 8 S B1_45 $end
+$var parameter 8 T B1_46 $end
+$var parameter 8 U B1_47 $end
+$var parameter 8 V B1_48 $end
+$var parameter 8 W B1_49 $end
+$var parameter 8 X B1_50 $end
+$var parameter 8 Y B1_51 $end
+$var parameter 8 Z B1_52 $end
+$var parameter 32 [ IDLE $end
+$var parameter 32 \ SEND $end
+$var parameter 8 ] position_01 $end
+$var parameter 8 ^ position_02 $end
+$var parameter 8 _ position_03 $end
+$var parameter 8 ` position_04 $end
+$var parameter 8 a position_05 $end
+$var parameter 8 b position_06 $end
+$var parameter 8 c position_07 $end
+$var parameter 8 d position_08 $end
+$var parameter 8 e position_09 $end
+$var parameter 8 f position_10 $end
+$var parameter 8 g position_11 $end
+$var parameter 8 h position_12 $end
+$var parameter 8 i position_13 $end
+$var parameter 8 j position_14 $end
+$var parameter 8 k position_15 $end
+$var parameter 8 l position_16 $end
+$var parameter 8 m position_17 $end
+$var parameter 8 n position_18 $end
+$var parameter 8 o position_19 $end
+$var parameter 8 p position_20 $end
+$var parameter 8 q position_21 $end
+$var parameter 8 r position_22 $end
+$var parameter 8 s position_23 $end
+$var parameter 8 t position_24 $end
+$var parameter 8 u position_25 $end
+$var parameter 8 v position_26 $end
+$var parameter 8 w position_27 $end
+$var parameter 8 x position_28 $end
+$var parameter 8 y position_29 $end
+$var parameter 8 z position_30 $end
+$var parameter 8 { position_31 $end
+$var parameter 8 | position_32 $end
+$var parameter 8 } position_33 $end
+$var parameter 8 ~ position_34 $end
+$var parameter 8 !" position_35 $end
+$var parameter 8 "" position_36 $end
+$var parameter 8 #" position_37 $end
+$var parameter 8 $" position_38 $end
+$var parameter 8 %" position_39 $end
+$var parameter 8 &" position_40 $end
+$var parameter 8 '" position_41 $end
+$var parameter 8 (" position_42 $end
+$var parameter 8 )" position_43 $end
+$var parameter 8 *" position_44 $end
+$var parameter 8 +" position_45 $end
+$var parameter 8 ," position_46 $end
+$var parameter 8 -" position_47 $end
+$var parameter 8 ." position_48 $end
+$var parameter 8 /" position_49 $end
+$var parameter 8 0" position_50 $end
+$var parameter 8 1" position_51 $end
+$var parameter 8 2" position_52 $end
+$var reg 8 3" next_card [7:0] $end
+$scope function card_selector $end
+$var reg 8 4" card [7:0] $end
+$upscope $end
+$scope module inst $end
+$var wire 1 " clk_dp_c_i $end
+$var wire 1 # req_card_state_dp_c_i $end
+$var wire 1 $ rst_dp_c_i $end
+$var parameter 8 5" B1_01 $end
+$var parameter 8 6" B1_02 $end
+$var parameter 8 7" B1_03 $end
+$var parameter 8 8" B1_04 $end
+$var parameter 8 9" B1_05 $end
+$var parameter 8 :" B1_06 $end
+$var parameter 8 ;" B1_07 $end
+$var parameter 8 <" B1_08 $end
+$var parameter 8 =" B1_09 $end
+$var parameter 8 >" B1_10 $end
+$var parameter 8 ?" B1_11 $end
+$var parameter 8 @" B1_12 $end
+$var parameter 8 A" B1_13 $end
+$var parameter 8 B" B1_14 $end
+$var parameter 8 C" B1_15 $end
+$var parameter 8 D" B1_16 $end
+$var parameter 8 E" B1_17 $end
+$var parameter 8 F" B1_18 $end
+$var parameter 8 G" B1_19 $end
+$var parameter 8 H" B1_20 $end
+$var parameter 8 I" B1_21 $end
+$var parameter 8 J" B1_22 $end
+$var parameter 8 K" B1_23 $end
+$var parameter 8 L" B1_24 $end
+$var parameter 8 M" B1_25 $end
+$var parameter 8 N" B1_26 $end
+$var parameter 8 O" B1_27 $end
+$var parameter 8 P" B1_28 $end
+$var parameter 8 Q" B1_29 $end
+$var parameter 8 R" B1_30 $end
+$var parameter 8 S" B1_31 $end
+$var parameter 8 T" B1_32 $end
+$var parameter 8 U" B1_33 $end
+$var parameter 8 V" B1_34 $end
+$var parameter 8 W" B1_35 $end
+$var parameter 8 X" B1_36 $end
+$var parameter 8 Y" B1_37 $end
+$var parameter 8 Z" B1_38 $end
+$var parameter 8 [" B1_39 $end
+$var parameter 8 \" B1_40 $end
+$var parameter 8 ]" B1_41 $end
+$var parameter 8 ^" B1_42 $end
+$var parameter 8 _" B1_43 $end
+$var parameter 8 `" B1_44 $end
+$var parameter 8 a" B1_45 $end
+$var parameter 8 b" B1_46 $end
+$var parameter 8 c" B1_47 $end
+$var parameter 8 d" B1_48 $end
+$var parameter 8 e" B1_49 $end
+$var parameter 8 f" B1_50 $end
+$var parameter 8 g" B1_51 $end
+$var parameter 8 h" B1_52 $end
+$var parameter 32 i" IDLE $end
+$var parameter 32 j" SEND $end
+$var parameter 8 k" position_01 $end
+$var parameter 8 l" position_02 $end
+$var parameter 8 m" position_03 $end
+$var parameter 8 n" position_04 $end
+$var parameter 8 o" position_05 $end
+$var parameter 8 p" position_06 $end
+$var parameter 8 q" position_07 $end
+$var parameter 8 r" position_08 $end
+$var parameter 8 s" position_09 $end
+$var parameter 8 t" position_10 $end
+$var parameter 8 u" position_11 $end
+$var parameter 8 v" position_12 $end
+$var parameter 8 w" position_13 $end
+$var parameter 8 x" position_14 $end
+$var parameter 8 y" position_15 $end
+$var parameter 8 z" position_16 $end
+$var parameter 8 {" position_17 $end
+$var parameter 8 |" position_18 $end
+$var parameter 8 }" position_19 $end
+$var parameter 8 ~" position_20 $end
+$var parameter 8 !# position_21 $end
+$var parameter 8 "# position_22 $end
+$var parameter 8 ## position_23 $end
+$var parameter 8 $# position_24 $end
+$var parameter 8 %# position_25 $end
+$var parameter 8 &# position_26 $end
+$var parameter 8 '# position_27 $end
+$var parameter 8 (# position_28 $end
+$var parameter 8 )# position_29 $end
+$var parameter 8 *# position_30 $end
+$var parameter 8 +# position_31 $end
+$var parameter 8 ,# position_32 $end
+$var parameter 8 -# position_33 $end
+$var parameter 8 .# position_34 $end
+$var parameter 8 /# position_35 $end
+$var parameter 8 0# position_36 $end
+$var parameter 8 1# position_37 $end
+$var parameter 8 2# position_38 $end
+$var parameter 8 3# position_39 $end
+$var parameter 8 4# position_40 $end
+$var parameter 8 5# position_41 $end
+$var parameter 8 6# position_42 $end
+$var parameter 8 7# position_43 $end
+$var parameter 8 8# position_44 $end
+$var parameter 8 9# position_45 $end
+$var parameter 8 :# position_46 $end
+$var parameter 8 ;# position_47 $end
+$var parameter 8 <# position_48 $end
+$var parameter 8 =# position_49 $end
+$var parameter 8 ># position_50 $end
+$var parameter 8 ?# position_51 $end
+$var parameter 8 @# position_52 $end
+$var reg 8 A# card_counter [7:0] $end
+$var reg 8 B# next_card_o [7:0] $end
+$var reg 1 C# state $end
+$upscope $end
+$upscope $end
+$scope begin Clock_generator $end
+$upscope $end
+$scope begin Wavedump $end
+$upscope $end
+$scope task Increment $end
+$upscope $end
+$scope task Initial_state $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b110 @#
+b10010 ?#
+b10110 >#
+b10100 =#
+b11100 <#
+b110010 ;#
+b111011 :#
+b10001 9#
+b111001 8#
+b110100 7#
+b11001 6#
+b101 5#
+b100100 4#
+b111101 3#
+b11000 2#
+b1001 1#
+b100010 0#
+b101011 /#
+b10101 .#
+b100001 -#
+b100011 ,#
+b100 +#
+b110110 *#
+b1010 )#
+b11010 (#
+b101100 '#
+b100111 &#
+b1011 %#
+b110001 $#
+b11011 ##
+b1101 "#
+b10 !#
+b110111 ~"
+b101101 }"
+b11101 |"
+b111000 {"
+b110011 z"
+b10111 y"
+b111 x"
+b111010 w"
+b1 v"
+b100110 u"
+b11 t"
+b100101 s"
+b110101 r"
+b1100 q"
+b101010 p"
+b101000 o"
+b1000 n"
+b101001 m"
+b10011 l"
+b111100 k"
+b1 j"
+b0 i"
+b111101 h"
+b111100 g"
+b111011 f"
+b111010 e"
+b111001 d"
+b111000 c"
+b110111 b"
+b110110 a"
+b110101 `"
+b110100 _"
+b110011 ^"
+b110010 ]"
+b110001 \"
+b101101 ["
+b101100 Z"
+b101011 Y"
+b101010 X"
+b101001 W"
+b101000 V"
+b100111 U"
+b100110 T"
+b100101 S"
+b100100 R"
+b100011 Q"
+b100010 P"
+b100001 O"
+b11101 N"
+b11100 M"
+b11011 L"
+b11010 K"
+b11001 J"
+b11000 I"
+b10111 H"
+b10110 G"
+b10101 F"
+b10100 E"
+b10011 D"
+b10010 C"
+b10001 B"
+b1101 A"
+b1100 @"
+b1011 ?"
+b1010 >"
+b1001 ="
+b1000 <"
+b111 ;"
+b110 :"
+b101 9"
+b100 8"
+b11 7"
+b10 6"
+b1 5"
+b110 2"
+b10010 1"
+b10110 0"
+b10100 /"
+b11100 ."
+b110010 -"
+b111011 ,"
+b10001 +"
+b111001 *"
+b110100 )"
+b11001 ("
+b101 '"
+b100100 &"
+b111101 %"
+b11000 $"
+b1001 #"
+b100010 ""
+b101011 !"
+b10101 ~
+b100001 }
+b100011 |
+b100 {
+b110110 z
+b1010 y
+b11010 x
+b101100 w
+b100111 v
+b1011 u
+b110001 t
+b11011 s
+b1101 r
+b10 q
+b110111 p
+b101101 o
+b11101 n
+b111000 m
+b110011 l
+b10111 k
+b111 j
+b111010 i
+b1 h
+b100110 g
+b11 f
+b100101 e
+b110101 d
+b1100 c
+b101010 b
+b101000 a
+b1000 `
+b101001 _
+b10011 ^
+b111100 ]
+b1 \
+b0 [
+b111101 Z
+b111100 Y
+b111011 X
+b111010 W
+b111001 V
+b111000 U
+b110111 T
+b110110 S
+b110101 R
+b110100 Q
+b110011 P
+b110010 O
+b110001 N
+b101101 M
+b101100 L
+b101011 K
+b101010 J
+b101001 I
+b101000 H
+b100111 G
+b100110 F
+b100101 E
+b100100 D
+b100011 C
+b100010 B
+b100001 A
+b11101 @
+b11100 ?
+b11011 >
+b11010 =
+b11001 <
+b11000 ;
+b10111 :
+b10110 9
+b10101 8
+b10100 7
+b10011 6
+b10010 5
+b10001 4
+b1101 3
+b1100 2
+b1011 1
+b1010 0
+b1001 /
+b1000 .
+b111 -
+b110 ,
+b101 +
+b100 *
+b11 )
+b10 (
+b1 '
+$end
+#0
+$dumpvars
+0C#
+b0 B#
+b0 A#
+bx 4"
+b0 3"
+b0 &
+b0 %
+0$
+0#
+0"
+b0 !
+$end
+#5000
+1"
+#10000
+1C#
+0"
+1#
+1$
+#15000
+b1 &
+b1 B#
+b1 A#
+b0 4"
+1"
+#20000
+0"
+1#
+#25000
+b10 &
+b10 B#
+b111100 !
+b111100 %
+b111100 3"
+b10 A#
+b1 4"
+1"
+#30000
+0"
+1#
+#35000
+b11 &
+b11 B#
+b11 A#
+b10011 !
+b10011 %
+b10011 3"
+b10 4"
+1"
+#40000
+0"
+1#
+#45000
+b100 &
+b100 B#
+b101001 !
+b101001 %
+b101001 3"
+b100 A#
+b11 4"
+1"
+#50000
+0"
+1#
+#55000
+b101 &
+b101 B#
+b101 A#
+b1000 !
+b1000 %
+b1000 3"
+b100 4"
+1"
+#60000
+0"
+1#
+#65000
+b110 &
+b110 B#
+b101000 !
+b101000 %
+b101000 3"
+b110 A#
+b101 4"
+1"
+#70000
+0"
+1#
+#75000
+b111 &
+b111 B#
+b111 A#
+b101010 !
+b101010 %
+b101010 3"
+b110 4"
+1"
+#80000
+0"
+1#
+#85000
+b1000 &
+b1000 B#
+b1100 !
+b1100 %
+b1100 3"
+b1000 A#
+b111 4"
+1"
+#90000
+0"
+1#
+#95000
+b1001 &
+b1001 B#
+b1001 A#
+b110101 !
+b110101 %
+b110101 3"
+b1000 4"
+1"
+#100000
+0"
+1#
+#105000
+b1010 &
+b1010 B#
+b100101 !
+b100101 %
+b100101 3"
+b1010 A#
+b1001 4"
+1"
+#110000
+0"
+1#
+#115000
+b1011 &
+b1011 B#
+b1011 A#
+b11 !
+b11 %
+b11 3"
+b1010 4"
+1"
+#120000
+0"
+1#
+#125000
+b1100 &
+b1100 B#
+b100110 !
+b100110 %
+b100110 3"
+b1100 A#
+b1011 4"
+1"
+#130000
+0"
+1#
+#135000
+b1101 &
+b1101 B#
+b1101 A#
+b1 !
+b1 %
+b1 3"
+b1100 4"
+1"
+#140000
+0"
+1#
+#145000
+b1110 &
+b1110 B#
+b111010 !
+b111010 %
+b111010 3"
+b1110 A#
+b1101 4"
+1"
+#150000
+0"
+1#
+#155000
+b1111 &
+b1111 B#
+b1111 A#
+b111 !
+b111 %
+b111 3"
+b1110 4"
+1"
+#160000
+0"
+1#
+#165000
+b10000 &
+b10000 B#
+b10111 !
+b10111 %
+b10111 3"
+b10000 A#
+b1111 4"
+1"
+#170000
+0"
+1#
+#175000
+b10001 &
+b10001 B#
+b10001 A#
+b110011 !
+b110011 %
+b110011 3"
+b10000 4"
+1"
+#180000
+0"
+1#
+#185000
+b10010 &
+b10010 B#
+b111000 !
+b111000 %
+b111000 3"
+b10010 A#
+b10001 4"
+1"
+#190000
+0"
+1#
+#195000
+b10011 &
+b10011 B#
+b10011 A#
+b11101 !
+b11101 %
+b11101 3"
+b10010 4"
+1"
+#200000
+0"
+1#
+#205000
+b10100 &
+b10100 B#
+b101101 !
+b101101 %
+b101101 3"
+b10100 A#
+b10011 4"
+1"
+#210000
+0"
+1#
+#215000
+b10101 &
+b10101 B#
+b10101 A#
+b110111 !
+b110111 %
+b110111 3"
+b10100 4"
+1"
+#220000
+0"
+1#
+#225000
+b10110 &
+b10110 B#
+b10 !
+b10 %
+b10 3"
+b10110 A#
+b10101 4"
+1"
+#230000
+0"
+1#
+#235000
+b10111 &
+b10111 B#
+b10111 A#
+b1101 !
+b1101 %
+b1101 3"
+b10110 4"
+1"
+#240000
+0"
+1#
+#245000
+b11000 &
+b11000 B#
+b11011 !
+b11011 %
+b11011 3"
+b11000 A#
+b10111 4"
+1"
+#250000
+0"
+1#
+#255000
+b11001 &
+b11001 B#
+b11001 A#
+b110001 !
+b110001 %
+b110001 3"
+b11000 4"
+1"
+#260000
+0"
+1#
+#265000
+b11010 &
+b11010 B#
+b1011 !
+b1011 %
+b1011 3"
+b11010 A#
+b11001 4"
+1"
+#270000
+0"
+1#
+#275000
+b11011 &
+b11011 B#
+b11011 A#
+b100111 !
+b100111 %
+b100111 3"
+b11010 4"
+1"
+#280000
+0"
+1#
+#285000
+b11100 &
+b11100 B#
+b101100 !
+b101100 %
+b101100 3"
+b11100 A#
+b11011 4"
+1"
+#290000
+0"
+1#
+#295000
+b11101 &
+b11101 B#
+b11101 A#
+b11010 !
+b11010 %
+b11010 3"
+b11100 4"
+1"
+#300000
+0"
+1#
+#305000
+b11110 &
+b11110 B#
+b1010 !
+b1010 %
+b1010 3"
+b11110 A#
+b11101 4"
+1"
+#310000
+0C#
+0"
+0#
