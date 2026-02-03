@@ -66,14 +66,14 @@ module seed_selector(
                         );
 
     seed_random_1_top seed1(
-                            .clk_i(clk_0),
+                            .clk_i(clk_2),
                             .rst_i(rst_i),
                             .request_card_i(request_card_i),
                             .card_to_send_o(card_seed_1)
                             );
 
     seed_random_2_top seed2(
-                            .clk_i(clk_1),
+                            .clk_i(clk_2),
                             .rst_i(rst_i),
                             .request_card_i(request_card_i),
                             .card_to_send_o(card_seed_2)
@@ -87,7 +87,7 @@ module seed_selector(
                             );
 
     seed_random_4_top seed4(
-                            .clk_i(clk_3),
+                            .clk_i(clk_2),
                             .rst_i(rst_i),
                             .request_card_i(request_card_i),
                             .card_to_send_o(card_seed_4)
@@ -95,15 +95,18 @@ module seed_selector(
 
 always@(*)
     begin
-        case(seed_sel)
-            seed_1: card_to_send_o = card_seed_1;
-            seed_2: card_to_send_o = card_seed_2;
-            seed_3: card_to_send_o = card_seed_3;
-            seed_4: card_to_send_o = card_seed_4;
-        endcase
+        if(request_card_i)
+            case(seed_sel)
+                seed_1: card_to_send_o = card_seed_1;
+                seed_2: card_to_send_o = card_seed_2;
+                seed_3: card_to_send_o = card_seed_3;
+                seed_4: card_to_send_o = card_seed_4;
+            endcase
+        else
+            card_to_send_o = card_to_send_o;
     end
 
-always@(posedge clk_4 or negedge rst_i)
+always@(posedge clk_0 or negedge rst_i)
     begin
         if(!rst_i)
             begin
