@@ -1,0 +1,1 @@
+make -f Makefile_seed_selector icarus

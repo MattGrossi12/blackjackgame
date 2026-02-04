@@ -46,6 +46,7 @@ module seed_selector(
     wire [7:0] card_seed_4;
 
     reg [1:0] seed_sel;
+    reg [7:0] next_card;
 
     localparam seed_1 = 2'b00;
     localparam seed_2 = 2'b01;
@@ -66,28 +67,28 @@ module seed_selector(
                         );
 
     seed_random_1_top seed1(
-                            .clk_i(clk_2),
+                            .clk_i(clk_0),
                             .rst_i(rst_i),
                             .request_card_i(request_card_i),
                             .card_to_send_o(card_seed_1)
                             );
 
     seed_random_2_top seed2(
-                            .clk_i(clk_2),
+                            .clk_i(clk_0),
                             .rst_i(rst_i),
                             .request_card_i(request_card_i),
                             .card_to_send_o(card_seed_2)
                             );
                             
     seed_random_3_top seed3(
-                            .clk_i(clk_2),
+                            .clk_i(clk_0),
                             .rst_i(rst_i),
                             .request_card_i(request_card_i),
                             .card_to_send_o(card_seed_3)
                             );
 
     seed_random_4_top seed4(
-                            .clk_i(clk_2),
+                            .clk_i(clk_0),
                             .rst_i(rst_i),
                             .request_card_i(request_card_i),
                             .card_to_send_o(card_seed_4)
@@ -95,15 +96,29 @@ module seed_selector(
 
 always@(*)
     begin
-        if(request_card_i)
-            case(seed_sel)
-                seed_1: card_to_send_o = card_seed_1;
-                seed_2: card_to_send_o = card_seed_2;
-                seed_3: card_to_send_o = card_seed_3;
-                seed_4: card_to_send_o = card_seed_4;
-            endcase
+        case(seed_sel)
+            seed_1: next_card = card_seed_1;
+            seed_2: next_card = card_seed_2;
+            seed_3: next_card = card_seed_3;
+            seed_4: next_card = card_seed_4;
+        endcase
+    end
+
+always@(posedge clk_0 or negedge rst_i)
+    begin
+        if(!rst_i)
+            begin
+                card_to_send_o <= 0;
+            end
         else
-            card_to_send_o = card_to_send_o;
+        if(request_card_i)
+            begin
+                card_to_send_o <= next_card;
+            end
+        else
+            begin
+                card_to_send_o <= card_to_send_o;
+            end
     end
 
 always@(posedge clk_0 or negedge rst_i)
