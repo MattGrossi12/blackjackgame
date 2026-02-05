@@ -49,14 +49,14 @@ always@(posedge clk_dp_c_i or negedge rst_dp_c_i)
         else 
         if(state == 1)
             begin 
-                    if(card_counter == 52) 
-                        begin
-                            card_counter <= 1'b0;
-                        end
-                    else
-                        begin
-                            card_counter <= card_counter + 1'b1;
-                        end
+                if(card_counter == 52) 
+                    begin
+                        card_counter <= 1'b0;
+                    end
+                else
+                    begin
+                        card_counter <= card_counter + 1'b1;
+                    end
             end
         else
             begin

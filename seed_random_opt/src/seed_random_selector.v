@@ -25,12 +25,14 @@ module seed_random_selector(
     output reg [1:0] seed_sel_o
 );
 
+reg [1:0] seed_s;
+
     localparam seed_1 = 2'b00;
     localparam seed_2 = 2'b01;
     localparam seed_3 = 2'b10;
     localparam seed_4 = 2'b11;
 
-always@(posedge clk_0 or negedge rst_i)
+always@(posedge clk_i or negedge rst_i)
     begin
         if(!rst_i)
             begin

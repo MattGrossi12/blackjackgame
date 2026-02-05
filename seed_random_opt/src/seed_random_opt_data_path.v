@@ -21,7 +21,7 @@
 module seed_random_opt_data_path(
     input clk_dp_i,
     input rst_dp_i,
-    input req_card_state_dp_i,
+    input req_card_state_dp_c_i,
     input [1:0] seed_sel_i,
     output [7:0] card_to_send_dp_o
 );
@@ -37,7 +37,7 @@ localparam SEND = 1;
     seed_random_opt_data_path_counter inst(
                                     .clk_dp_c_i(clk_dp_i),
                                     .rst_dp_c_i(rst_dp_i),
-                                    .req_card_state_dp_c_i(req_card_state_dp_i),
+                                    .req_card_state_dp_c_i(req_card_state_dp_c_i),
                                     .next_card_o(card_to_send)
                                 );
 
@@ -50,7 +50,6 @@ localparam seed4_now = 2'b11;
 
 //Data-Path:
 function [7:0] card_selector;
-    input [1:0] seed_sel_i;
     input [7:0] card;
     begin
         case (seed_sel_i)
@@ -309,9 +308,14 @@ always@(posedge clk_dp_i or negedge rst_dp_i)
             begin
                     next_card <= 0;
             end
-        else 
+        else
+        if(req_card_state_dp_c_i)
             begin
                 next_card <= card_selector(card_to_send);
+            end
+        else
+            begin
+                next_card <= next_card;
             end
     end
 

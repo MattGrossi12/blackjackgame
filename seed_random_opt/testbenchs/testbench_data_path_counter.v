@@ -33,7 +33,7 @@ module testbench_data_path_counter;
 	wire [7:0] next_card_o;
 
 	// Instantiate the Unit Under Test (UUT)
-	seed_random_1_data_path_counter uut (
+	seed_random_opt_data_path_counter uut (
 		.clk_dp_c_i(clk_dp_c_i), 
 		.rst_dp_c_i(rst_dp_c_i), 
 		.req_card_state_dp_c_i(req_card_state_dp_c_i), 
@@ -54,11 +54,21 @@ module testbench_data_path_counter;
 			rst_dp_c_i = 1;
 			#10;
             req_card_state_dp_c_i = 1;
-			#50;
+			#150;
             req_card_state_dp_c_i = 0;
-			#50;
+			#150;
             req_card_state_dp_c_i = 1;
-			#50;
+			#150;
+			rst_dp_c_i = 0;
+			#10;
+			rst_dp_c_i = 1;
+			#10;
+            req_card_state_dp_c_i = 1;
+			#150;
+            req_card_state_dp_c_i = 0;
+			#150;
+            req_card_state_dp_c_i = 1;
+			#150;
 			$finish;
         end
       
