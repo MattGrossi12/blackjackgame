@@ -4,15 +4,15 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   16:35:17 02/01/2026
-// Design Name:   seed_selector
+// Create Date:   08:00:48 02/05/2026
+// Design Name:   repeat_detector
 // Module Name:   /home/matheus/ISE_projects/seed_random_1/testbench.v
 // Project Name:  seed_random_1
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: seed_selector
+// Verilog Test Fixture created by ISE for module: repeat_detector
 //
 // Dependencies:
 // 
@@ -27,26 +27,42 @@ module testbench;
 	// Inputs
 	reg clk_i;
 	reg start;
-	reg rst_i;
 	reg request_card_i;
+	reg rst_i;
+	reg pos_0;
+	reg pos_1;
+	reg pos_2;
+	reg pos_3;
+	reg pos_4;
+	reg pos_5;
+	reg pos_6;
+	reg pos_7;
+	reg pos_8;
+	reg pos_9;
+	reg pos_10;
 
-	// Outputs
-	wire [7:0] card_to_send_o;
+    //Outputs:
+    wire [7:0] card_o;
 
 	// Instantiate the Unit Under Test (UUT)
-	seed_selector uut (
+	repeat_detector uut (
 		.clk_i(clk_i), 
 		.start(start), 
-		.rst_i(rst_i), 
 		.request_card_i(request_card_i), 
-		.card_to_send_o(card_to_send_o)
+		.rst_i(rst_i), 
+		.card_o(card_o)
 	);
-
 
     initial 
         begin: Clock_generator
           clk_i = 0;
           forever #5 clk_i = ~clk_i;
+        end
+
+    initial 
+        begin: repeat_card
+          request_card_i = 0;
+          forever #15 request_card_i = ~request_card_i;
         end
 
 	initial 
@@ -59,48 +75,13 @@ module testbench;
 			start = 1;
 			#10;
 			//-----------------------------
-            request_card_i = 0;
-            #30;
-            request_card_i = 1;
-			#10;
-            request_card_i = 0;
-            #30;
-            request_card_i = 1;
-			#10;
-            request_card_i = 0;
-            #30;
-            request_card_i = 1;
-			#10;
-            request_card_i = 0;
-            #30;
-			rst_i = 0;
-			#50;
-			rst_i = 1;
-			#50;
-            request_card_i = 1;
-			#10;
-            request_card_i = 0;
-            #30;
-            request_card_i = 1;
-			#10;
-            request_card_i = 0;
-            #30;
-            request_card_i = 1;
-			#10;
-            request_card_i = 0;
-            #30;
-            request_card_i = 1;
-			#10;
-            request_card_i = 0;
-            #30;
-            request_card_i = 1;
-			#10;
+            #300000;
 			$finish;
         end
       
     initial 
         begin: Wavedump
-                $dumpfile("../waveforms/seed_selector.vcd");
+                $dumpfile("../waveforms/repeat.vcd");
             $dumpvars(0);
         end
 

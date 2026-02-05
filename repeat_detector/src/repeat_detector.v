@@ -2,9 +2,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    16:19:00 02/01/2026 
+// Create Date:    07:59:15 02/05/2026 
 // Design Name: 
-// Module Name:    seed_selector 
+// Module Name:    repeat_detector 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -22,35 +22,48 @@ module repeat_detector(
     input clk_i,
     input start,
     input request_card_i,
-    input [7:0] card_coming_i,
+    input rst_i,
 
-    input pos_0,
-    input pos_1,
-    input pos_2,
-    input pos_3,
-    input pos_4,
-    input pos_5,
-    input pos_6,
-    input pos_7,
-    input pos_8,
-    input pos_9,
-    input pos_10,
-
-    output rst_i,
-    output request_another_card,
-    output let_card_go,
+    output reg [7:0] card_o
 );
 
     localparam APPROVE = 1'b1;
     localparam DECLINE = 1'b0;
 
     reg situation_state;
+    reg request_another_card;
+    reg temp_save;
+
+    wire save;
+    wire card_requisiton;
+
+    wire   [7:0] card_i;
+
+    wire [7:0] pos_0;
+    wire [7:0] pos_1;
+    wire [7:0] pos_2;
+    wire [7:0] pos_3;
+    wire [7:0] pos_4;
+    wire [7:0] pos_5;
+    wire [7:0] pos_6;
+    wire [7:0] pos_7;
+    wire [7:0] pos_8;
+    wire [7:0] pos_9;
+    wire [7:0] pos_10;
+
+    seed_random_opt_top srinst(
+                                .clk_i(clk_i),
+                                .start(start),
+                                .rst_i(rst_i),
+                                .request_card_i(card_requisiton),
+                                .card_to_send_o(card_i)
+                            );
 
     card_stack stack(
                     .clk_i(clk_i),
                     .save(save),
                     .rst_i(rst_i),
-                    .data_in(card_coming_i),
+                    .data_in(card_o),
                     .data_out_0(pos_0),
                     .data_out_1(pos_1),
                     .data_out_2(pos_2),
@@ -66,10 +79,28 @@ module repeat_detector(
 
 always@(posedge clk_i)
     begin
-        case(card_coming_i)
-            pos_0, pos_1, pos_2, pos_3, pos_4, pos_5, pos_6, pos_7, pos_8, pos_9, pos_10:  situation_state = DECLINE;
-            default: situation_state = APPROVE;
+        case(card_i)
+            pos_0, pos_1, pos_2, pos_3, pos_4, pos_5, pos_6, pos_7, pos_8, pos_9, pos_10:  situation_state <= DECLINE;
+            default: situation_state <= APPROVE;
         endcase
     end
+
+always@(posedge clk_i)
+    begin
+        if(situation_state == APPROVE)
+            begin
+                card_o <= card_i;
+                temp_save <= 1'b1;
+            end
+        else
+            begin
+                request_another_card <= 1'b1;
+                card_o <= card_i;
+                temp_save <= 1'b0;
+            end
+    end
+
+assign card_requisiton = request_another_card | request_card_i;
+assign save = temp_save;
 
 endmodule
