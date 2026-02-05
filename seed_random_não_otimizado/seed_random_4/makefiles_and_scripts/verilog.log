@@ -1,0 +1,12 @@
+OSS_CVC_7.00b-x86_64-rhel6x of 07/07/14 (Linux-elf).
+Copyright (c) 1991-2014 Tachyon Design Automation Corp.
+  All Rights reserved.  Licensed software subject to prohibitions and
+  restrictions.  See OSS CVC artistic license included with release.
+Today is Fri Jan 30 21:46:11 2026.
+Elaborating source file "../src/seed_random_1_data_path_counter.v"
+**../src/seed_random_1_data_path_counter.v(28) ERROR** [933] unable to open `include file seed_random_1_data_base.vh
+Elaborating source file "../src/seed_random_1_data_base.vh"
+**../src/seed_random_1_data_base.vh(43) ERROR** [975] module or primitive keyword expected - localparam read
+Elaborating source file "../testbenchs/testbench_data_path_counter.v"
+  Unable to begin simulation.
+End of OSS_CVC_7.00b-x86_64-rhel6x at Fri Jan 30 21:46:11 2026 (elapsed 0.0 seconds).

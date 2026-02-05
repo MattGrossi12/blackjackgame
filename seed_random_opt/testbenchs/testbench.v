@@ -4,15 +4,15 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   16:35:17 02/01/2026
-// Design Name:   seed_selector
+// Create Date:   20:47:53 01/28/2026
+// Design Name:   seed_random_1
 // Module Name:   /home/matheus/ISE_projects/seed_random_1/testbench.v
 // Project Name:  seed_random_1
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: seed_selector
+// Verilog Test Fixture created by ISE for module: seed_random_1
 //
 // Dependencies:
 // 
@@ -34,15 +34,13 @@ module testbench;
 	wire [7:0] card_to_send_o;
 
 	// Instantiate the Unit Under Test (UUT)
-	seed_selector uut (
-		.clk_i(clk_i), 
+	seed_random_opt_top uut (
+		.clk_i(clk_i),
 		.start(start), 
 		.rst_i(rst_i), 
 		.request_card_i(request_card_i), 
 		.card_to_send_o(card_to_send_o)
 	);
-
-
 
     initial 
         begin: Clock_generator
@@ -58,50 +56,34 @@ module testbench;
 			rst_i = 1;
 			#10;
 			start = 1;
-			#10;
-			//-----------------------------
             request_card_i = 0;
-            #30;
+            #50;
             request_card_i = 1;
-			#10;
+			#100;
             request_card_i = 0;
-            #30;
+			#150;
             request_card_i = 1;
-			#10;
+			#150;
             request_card_i = 0;
-            #30;
+			#150;
             request_card_i = 1;
-			#10;
+			#150;			
             request_card_i = 0;
-            #30;
-			rst_i = 0;
-			#50;
-			rst_i = 1;
-			#50;
+			#150;
             request_card_i = 1;
-			#10;
+			#150;
             request_card_i = 0;
-            #30;
+			#150;
             request_card_i = 1;
-			#10;
-            request_card_i = 0;
-            #30;
+			#150;			
             request_card_i = 1;
-			#10;
-            request_card_i = 0;
-            #30;
-            request_card_i = 1;
-			#10;
-            request_card_i = 0;
-            #30;
-            request_card_i = 1;
-			#10;
+			#1000;
 			$finish;
         end
       
     initial 
         begin: Wavedump
-                $dumpfile("../waveforms/seed_selector.vcd");
+                $dumpfile("../waveforms/top.vcd");
             $dumpvars(0);
         end
 

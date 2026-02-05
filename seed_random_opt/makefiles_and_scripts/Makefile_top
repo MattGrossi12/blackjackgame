@@ -1,0 +1,78 @@
+# Nome do executável de simulação
+SIM = sim.vvp
+LD_LIBRARY_PATH="" gtkwave dump.fst
+# Variáveis de Configuração
+SRC = ../src
+TB = ../testbenchs
+INC = -I $(SRC)
+
+TOP_MODULE   = seed_random_opt_top.v
+TESTBENCH = testbench.v
+
+INST1 = seed_random_opt_control_path.v
+INST2 = seed_random_opt_data_path.v
+INST3 = seed_random_opt_data_base.vh
+INST4 = seed_random_opt_data_path_counter.v
+INST5 = seed_random_selector.v
+
+# Lista de arquivos Verilog
+VERILOG_FILES = \
+    $(SRC)/$(TOP_MODULE) \
+	$(SRC)/$(INST1) \
+	$(SRC)/$(INST2) \
+	$(SRC)/$(INST3) \
+	$(SRC)/$(INST4) \
+	$(SRC)/$(INST5) \
+    $(TB)/$(TESTBENCH)
+
+# Comando de compilação pelo cvc:
+cvc:
+	cvc64 +acc+2 +large +parallel2=on $(VERILOG_FILES)
+	./cvcsim
+	rm -f cvcsim
+
+#+fstvars 
+fst:
+	./cvcsim
+	rm -f cvcsim
+# cvc64 +large $(VERILOG_FILES)
+# cvc64 +large +fst+parallel2=on $(VERILOG_FILES)
+# cvc64 +interp +fst+parallel2=on $(VERILOG_FILES)
+
+# Comando de compilação pelo icarus:
+icarus:
+	iverilog -Wall -g2012 $(INC) -o $(SIM) $(VERILOG_FILES)
+	vvp $(SIM)
+	rm -f sim.vvp
+
+# Visualização com surfer:
+surf:
+	surfer dump.fst
+
+# Visualização com GTK:
+gtk:
+	gtkwave dump.fst
+
+# Síntese do diagrama
+synth:
+	yosys synth.ys
+
+# Síntese do visualização
+diagram:
+	netlistsvg netlist.json -o diagram.svg
+
+png:
+	convert diagram.svg diagram.png
+
+# Limpeza dos arquivos gerados
+clean:
+	rm -f dump.fst
+	rm -f netlist.v
+	rm -f netlist.json
+	rm -f sim.vvp
+	rm -f diagram.dot
+	rm -f diagram.svg
+	rm -f diagram.png
+	rm -f cvcsim
+	rm -f verilog.log
+	clear
